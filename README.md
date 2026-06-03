@@ -87,10 +87,6 @@ Theo bài viết gốc:
 - `lich-2026_page-0001` là ảnh bìa.
 - `lich-2026_page-0002` đến `lich-2026_page-0013` tương ứng tháng 1 đến tháng 12.
 
-## Vì sao không làm extension trình duyệt?
-
-Extension có thể nhắc người dùng hoặc tải ảnh, nhưng trình duyệt không được quyền đổi hình nền của Windows/macOS trực tiếp. Vì vậy bản portable script là cách gọn nhất: tải về, chạy, đổi wallpaper ngay.
-
 ## Bản quyền và ghi chú
 
 Đây là bộ đóng gói tiện ích không chính thức để người dùng cá nhân cài nhanh bộ lịch wallpaper. Hình ảnh thuộc về Bò và Gấu/đơn vị phát hành gốc. Vui lòng giữ nguồn khi chia sẻ.
