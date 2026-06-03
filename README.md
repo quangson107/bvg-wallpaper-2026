@@ -36,22 +36,33 @@ Run-Windows.cmd
 
 Nếu Windows hiện cảnh báo bảo mật, chọn **More info** rồi **Run anyway**. Đây là script PowerShell nội bộ để đổi hình nền, không phải file cài đặt.
 
-Các tùy chọn nâng cao trong PowerShell:
+Các thao tác Windows thường dùng:
 
-```powershell
-.\Set-BVGWallpaper.ps1
-.\Set-BVGWallpaper.ps1 -Month 6
-.\Set-BVGWallpaper.ps1 -DownloadAll
-.\Set-BVGWallpaper.ps1 -InstallMonthlyTask
-.\Set-BVGWallpaper.ps1 -RemoveMonthlyTask
+```text
+Run-Windows.cmd
+Install-MonthlyTask-Windows.cmd
+Remove-MonthlyTask-Windows.cmd
+Download-All-Windows.cmd
 ```
 
 Ý nghĩa:
 
-- `-Month 6`: chọn ảnh tháng 6 thay vì tháng hiện tại.
-- `-DownloadAll`: tải lại đủ 12 ảnh nếu cần.
-- `-InstallMonthlyTask`: tự chạy vào ngày 1 hằng tháng lúc 09:00.
-- `-RemoveMonthlyTask`: gỡ lịch tự chạy.
+- `Run-Windows.cmd`: đổi wallpaper theo tháng hiện tại.
+- `Install-MonthlyTask-Windows.cmd`: tự chạy vào ngày 1 hằng tháng lúc 09:00.
+- `Remove-MonthlyTask-Windows.cmd`: gỡ lịch tự chạy.
+- `Download-All-Windows.cmd`: tải lại đủ 12 ảnh nếu cần.
+
+Nếu muốn dùng PowerShell nâng cao, hãy chạy theo dạng có `-ExecutionPolicy Bypass`:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1 -Month 6
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1 -DownloadAll
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1 -InstallMonthlyTask
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1 -RemoveMonthlyTask
+```
+
+Không nên chạy trực tiếp `.\Set-BVGWallpaper.ps1` trên Windows vì máy có thể chặn file `.ps1` chưa ký số.
 
 ## Hướng dẫn macOS
 
@@ -86,6 +97,10 @@ Theo bài viết gốc:
 
 - `lich-2026_page-0001` là ảnh bìa.
 - `lich-2026_page-0002` đến `lich-2026_page-0013` tương ứng tháng 1 đến tháng 12.
+
+## Vì sao không làm extension trình duyệt?
+
+Extension có thể nhắc người dùng hoặc tải ảnh, nhưng trình duyệt không được quyền đổi hình nền của Windows/macOS trực tiếp. Vì vậy bản portable script là cách gọn nhất: tải về, chạy, đổi wallpaper ngay.
 
 ## Bản quyền và ghi chú
 

@@ -21,6 +21,14 @@ Sau đó giải nén và chạy:
 - Có sẵn đủ 12 ảnh lịch năm 2026.
 - Không cần cài đặt phần mềm.
 - Có tùy chọn tự chạy vào ngày 1 hằng tháng lúc 09:00.
+- Windows có sẵn file `.cmd` để chạy không bị chặn bởi PowerShell Execution Policy.
+
+## Windows nên chạy file nào?
+
+- Đổi wallpaper tháng hiện tại: `Run-Windows.cmd`
+- Bật tự động đổi vào đầu tháng: `Install-MonthlyTask-Windows.cmd`
+- Gỡ tự động đổi vào đầu tháng: `Remove-MonthlyTask-Windows.cmd`
+- Tải lại đủ 12 ảnh: `Download-All-Windows.cmd`
 
 ## Nguồn ảnh
 

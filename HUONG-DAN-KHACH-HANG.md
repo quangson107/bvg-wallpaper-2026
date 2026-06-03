@@ -28,6 +28,30 @@ Máy sẽ tự chọn ảnh lịch của tháng hiện tại và đặt làm hì
 
 Nếu Windows hiện cảnh báo bảo mật, chọn **More info** rồi **Run anyway**. Bộ này không cài thêm phần mềm, chỉ chạy một script nhỏ để đổi hình nền.
 
+## Tự đổi wallpaper vào đầu tháng trên Windows
+
+Trong thư mục vừa giải nén, nhấn đúp file:
+
+```text
+Install-MonthlyTask-Windows.cmd
+```
+
+Máy sẽ tạo lịch tự chạy vào ngày 1 hằng tháng lúc 09:00.
+
+Muốn gỡ lịch tự động, nhấn đúp:
+
+```text
+Remove-MonthlyTask-Windows.cmd
+```
+
+Nếu cần tải lại đủ 12 ảnh, nhấn đúp:
+
+```text
+Download-All-Windows.cmd
+```
+
+Không nên chạy trực tiếp file `Set-BVGWallpaper.ps1` vì một số máy Windows sẽ chặn file PowerShell chưa ký số.
+
 ## Dùng trên MacBook
 
 Mở Terminal trong thư mục đã giải nén, chạy lần lượt:
@@ -39,15 +63,9 @@ chmod +x ./set-bvg-wallpaper.command
 
 Máy sẽ tự chọn ảnh lịch của tháng hiện tại và đặt làm hình nền.
 
-## Muốn tự nhắc vào đầu tháng?
+## Muốn tự nhắc vào đầu tháng trên MacBook?
 
 Bạn có thể bật lịch tự chạy vào ngày 1 hằng tháng lúc 09:00.
-
-Trên Windows, mở PowerShell trong thư mục đã giải nén và chạy:
-
-```powershell
-.\Set-BVGWallpaper.ps1 -InstallMonthlyTask
-```
 
 Trên macOS, mở Terminal trong thư mục đã giải nén và chạy:
 
@@ -62,7 +80,7 @@ Khi sang tháng mới, máy sẽ tự chạy lại để đổi sang ảnh lịc
 Windows:
 
 ```powershell
-.\Set-BVGWallpaper.ps1 -Month 6
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Set-BVGWallpaper.ps1 -Month 6
 ```
 
 macOS:
@@ -75,11 +93,7 @@ Thay số `6` bằng tháng bạn muốn, từ `1` đến `12`.
 
 ## Gỡ lịch tự động
 
-Windows:
-
-```powershell
-.\Set-BVGWallpaper.ps1 -RemoveMonthlyTask
-```
+Windows: nhấn đúp `Remove-MonthlyTask-Windows.cmd`.
 
 macOS:
 
