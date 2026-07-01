@@ -12,6 +12,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $TaskName = "BVG Wallpaper 2026 Monthly"
+$CatchupTaskName = "BVG Wallpaper 2026 Daily Catchup"
 $ScriptDir = Split-Path -Parent $PSCommandPath
 $WallpaperDir = Join-Path $ScriptDir "wallpapers"
 
@@ -119,14 +120,21 @@ namespace Wallpaper {
 function Install-MonthlyTask {
     $scriptPath = (Resolve-Path -LiteralPath $PSCommandPath).Path
     $taskCommand = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`""
+
     & schtasks.exe /Create /TN $TaskName /SC MONTHLY /D 1 /ST 09:00 /TR $taskCommand /F | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "Could not create the monthly Windows task."
+    }
+
+    & schtasks.exe /Create /TN $CatchupTaskName /SC DAILY /ST 09:05 /TR $taskCommand /F | Out-Host
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "Could not create the daily catch-up Windows task. The monthly task was created."
     }
 }
 
 function Remove-MonthlyTask {
     & schtasks.exe /Delete /TN $TaskName /F | Out-Host
+    & schtasks.exe /Delete /TN $CatchupTaskName /F | Out-Host
 }
 
 if ($RemoveMonthlyTask) {

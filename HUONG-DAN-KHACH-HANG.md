@@ -16,6 +16,8 @@ BVG-Wallpaper-2026-portable.zip
 
 Sau khi tải xong, hãy giải nén file zip ra một thư mục bất kỳ trên máy tính.
 
+Nếu muốn bật tự động đổi wallpaper đầu tháng, nên để thư mục đã giải nén ở một nơi cố định, ví dụ `Documents` hoặc `D:\BVG-Wallpaper-2026`. Không nên xóa hoặc di chuyển thư mục sau khi đã bật tự động.
+
 ## Dùng trên Windows
 
 Trong thư mục vừa giải nén, nhấn đúp file:
@@ -37,6 +39,8 @@ Install-MonthlyTask-Windows.cmd
 ```
 
 Máy sẽ tạo lịch tự chạy vào ngày 1 hằng tháng lúc 09:00.
+
+Bản mới cũng tạo thêm một lịch chạy bù hằng ngày lúc 09:05. Nhờ vậy nếu máy đang tắt hoặc đang ngủ đúng giờ hẹn ngày 1, lần chạy bù kế tiếp vẫn tự đổi sang wallpaper của tháng hiện tại.
 
 Muốn gỡ lịch tự động, nhấn đúp:
 

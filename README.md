@@ -14,6 +14,8 @@ Cách đơn giản nhất cho khách hàng:
    - Windows: nhấn đúp `Run-Windows.cmd`
    - macOS: mở Terminal trong thư mục đã giải nén và chạy `./set-bvg-wallpaper.command`
 
+Nếu muốn bật tự động đổi wallpaper đầu tháng, nên để thư mục đã giải nén ở một nơi cố định, ví dụ `Documents` hoặc `D:\BVG-Wallpaper-2026`. Không nên xóa hoặc di chuyển thư mục sau khi đã bật tự động.
+
 Khi chạy, ứng dụng sẽ tự chọn ảnh lịch của tháng hiện tại và đặt làm hình nền desktop.
 
 ## Có gì trong bộ này?
@@ -48,7 +50,7 @@ Download-All-Windows.cmd
 Ý nghĩa:
 
 - `Run-Windows.cmd`: đổi wallpaper theo tháng hiện tại.
-- `Install-MonthlyTask-Windows.cmd`: tự chạy vào ngày 1 hằng tháng lúc 09:00.
+- `Install-MonthlyTask-Windows.cmd`: tự chạy vào ngày 1 hằng tháng lúc 09:00, kèm một lịch chạy bù hằng ngày lúc 09:05 để tránh bị lỡ nếu máy tắt/ngủ.
 - `Remove-MonthlyTask-Windows.cmd`: gỡ lịch tự chạy.
 - `Download-All-Windows.cmd`: tải lại đủ 12 ảnh nếu cần.
 
